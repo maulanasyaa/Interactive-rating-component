@@ -1,0 +1,272 @@
+/* font */
+
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap");
+
+/* reset */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-orange);
+  font-weight: bold;
+}
+
+/* root */
+
+:root {
+  --color-orange: hsl(25, 97%, 53%);
+  --color-white: hsl(0, 0%, 100%);
+  --color-light-grey: hsl(217, 12%, 63%);
+  --color-medium-grey: hsl(216, 12%, 54%);
+  --color-medium-grey-opacity: hsla(216, 12%, 54%, 0.1);
+  --color-dark-blue: hsl(213, 19%, 18%);
+  --color-dark-blue-opacity: hsl(213, 19%, 18%, 0.7);
+  --color-darker-blue: hsl(216, 12%, 8%);
+  --font-overpass: "Overpass", sans-serif;
+}
+
+/* main styles */
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-darker-blue);
+  font-family: var(--font-overpass);
+}
+
+.attribution {
+  color: var(--color-white);
+}
+
+/* rating card */
+
+.card {
+  max-width: 30rem;
+  background-color: var(--color-dark-blue-opacity);
+  padding: 2rem;
+  margin-bottom: 3rem;
+  border-radius: 2rem;
+  transition: ease 0.5s;
+}
+
+.circle {
+  width: 3.5rem;
+  height: 3.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: var(--color-light-grey);
+  background-color: var(--color-medium-grey-opacity);
+}
+
+.circle-star {
+  margin-bottom: 2rem;
+}
+
+.circle-star svg {
+  transition: ease-out 1s;
+}
+
+.circle-star:hover svg {
+  transform: scale(1.1);
+  transform: rotate(360deg);
+  transition: ease-in 1s;
+}
+
+.rating-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: 0.5rem;
+}
+
+.rating-text {
+  color: var(--color-light-grey);
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.rating-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 2rem;
+}
+
+.rating-item {
+  cursor: pointer;
+  transition: ease 0.5s;
+}
+
+.rating-item:hover {
+  transition: ease 0.5s;
+  background-color: var(--color-orange);
+  color: var(--color-white);
+}
+
+.rating-clicked {
+  cursor: pointer;
+  transition: ease 0.5s;
+  background-color: var(--color-medium-grey);
+  color: var(--color-white);
+}
+
+.rating-clicked:hover {
+  transition: ease 0.5s;
+  background-color: hsl(216, 12%, 45%);
+}
+
+.rating-button {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 2rem;
+  border: none;
+  color: var(--color-white);
+  background-color: var(--color-orange);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 0.3rem;
+  font-family: var(--font-overpass);
+  transition: ease 0.3s;
+}
+
+.rating-button:hover {
+  background-color: var(--color-white);
+  color: var(--color-orange);
+  transition: ease 0.3s;
+}
+
+/* result card */
+
+.card-result {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.thankyou-svg {
+  margin-bottom: 2rem;
+}
+
+.rating-result {
+  color: var(--color-orange);
+  background-color: var(--color-medium-grey-opacity);
+  padding: 0.3rem;
+  width: 55%;
+  text-align: center;
+  border-radius: 2rem;
+  font-size: 1.2rem;
+  margin-bottom: 2.5rem;
+}
+
+.result-textarea {
+  text-align: center;
+}
+
+.result-title {
+  color: var(--color-white);
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.result-text {
+  color: var(--color-light-grey);
+  font-size: 1.15rem;
+  margin-bottom: 1rem;
+}
+
+/* hidden */
+
+.card-hidden {
+  display: none;
+}
+
+/* media query */
+@media only screen and (max-width: 768px) {
+  .card {
+    width: 90%;
+  }
+}
+/* animation */
+
+@keyframes shaker {
+  0% {
+    transform: translate(2px, 0);
+  }
+  50% {
+    transform: translate(-2px, 0);
+  }
+  100% {
+    transform: translate(2px, 0);
+  }
+}
+
+@-webkit-keyframes shaker {
+  0% {
+    -webkit-transform: translate(2px, 0);
+  }
+  50% {
+    -webkit-transform: translate(-2px, 0);
+  }
+  100% {
+    -webkit-transform: translate(2px, 0);
+  }
+}
+
+.shake {
+  animation-name: shaker;
+  animation-duration: 0.3s;
+  transform-origin: 50% 50%;
+  animation-timing-function: linear;
+  -webkit-animation-name: shaker;
+  -webkit-animation-duration: 0.3s;
+  -webkit-transform-origin: 50% 50%;
+  -webkit-animation-timing-function: linear;
+}
