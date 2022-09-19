@@ -63,6 +63,10 @@ a {
   --font-overpass: "Overpass", sans-serif;
 }
 
+html {
+  font-size: 14px;
+}
+
 /* main styles */
 
 body {
